@@ -56,8 +56,8 @@ public class MovieService {
                     .append(movie.getId())
                     .append(", Title = ")
                     .append(movie.getInfo().getTitle())
-                    .append("  Author = ")
-                    .append(movie.getInfo().getAuthor());
+                    .append("  Genre = ")
+                    .append(movie.getInfo().getGenre());
             if (rentRepository.findIfMovieIsRented(movie.getId())) {
                 result.append(" will be available in: ").append(movie.getRentedBy().stream().map(Rent::getEndDate).max(Comparator.naturalOrder()).orElse(null)).append("\n");
             } else {

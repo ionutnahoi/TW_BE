@@ -90,7 +90,7 @@ public class UserService implements UserDetailsService {
     public ResponseEntity<Movie> addMovie(Long id, MovieInfo movieInfo) {
         HttpStatus status = HttpStatus.OK;
         User tempUser = repository.findById(id).orElse(null);
-        if (tempUser == null || movieInfo.getTitle().equals("") || movieInfo.getAuthor().equals("")) {
+        if (tempUser == null || movieInfo.getTitle().equals("") || movieInfo.getGenre().equals("")) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
         MovieInfo tempMovieInfo = movieInfoRepository.findMovieInfoByTitle(movieInfo.getTitle());

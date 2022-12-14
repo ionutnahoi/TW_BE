@@ -16,7 +16,7 @@ public class EmailSenderService {
         message.setFrom("my.gmail@gmail.com");
         message.setTo(toEmail);
         message.setSubject(movie.getInfo().getTitle() + " is now available");
-        String text = movie.getInfo().getTitle() + " by " + movie.getInfo().getAuthor() + " is now available and can be rent on: http://localhost:3000/";
+        String text = movie.getInfo().getTitle() + " by " + movie.getInfo().getGenre() + " is now available and can be rent on: http://localhost:3000/";
         message.setText(text);
 
         mailSender.send(message);

@@ -21,7 +21,7 @@ public class MovieInfo {
     private String title;
 
     @Column(nullable = false)
-    private String author;
+    private String genre;
 
 
     @OneToMany(mappedBy = "info")
@@ -33,7 +33,7 @@ public class MovieInfo {
         return "MovieInfo{" +
                 "id=" + getId() +
                 ", title='" + getTitle() + '\'' +
-                ", author='" + getAuthor() + '\'' +
+                ", genre='" + getGenre() + '\'' +
                 '}';
     }
 }
