@@ -60,7 +60,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .antMatchers(SWAGGER_WHITELIST).permitAll()
                 .antMatchers("/authenticate/**").permitAll()
-                .anyRequest().permitAll();  //TODO authenticated()
+                .anyRequest().authenticated();
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
